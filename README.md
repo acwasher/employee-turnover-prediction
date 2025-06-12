@@ -1,7 +1,7 @@
 # employee-turnover-prediction
 Capstone project analyzing fictional HR data to predict employee turnover using XGBoost and Random Forest.
 
-# Employee Turnover Analysis – Salifort Data Team
+# Employee Turnover Analysis – Salifort Motors
 
 ## Overview
 This project analyzes a fictional HR dataset focused on employee turnover for *Salifort Motors*.  
