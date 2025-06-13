@@ -15,10 +15,13 @@ This report (Milestone 5) presents findings from **exploratory data analysis (ED
 We developed **Random Forest (RF)** and **XGBoost (XGB)** models to predict both employee turnover and satisfaction. These models were well-suited for:
 - Binomial outcomes (yes/no turnover)
 - Datasets with mixed data types: *discrete, continuous, and categorical*
+- Datasets with outliers
 
-The **XGB turnover model** performed best:
+The **XGB left (turnover) model** performed best:
 - F1 score: **0.934** (on a test set comprising 25% of the data)
-- XGB satisfaction model F1 score: *0.737*
+- RF turnover model: 0.925
+- RF satisfaction model F1 score: 0.639
+- XGB satisfaction model F1 score: 0.629
 
 Given its superior performance, we primarily relied on the **XGB turnover model** for insights, alongside EDA.
 
@@ -28,17 +31,31 @@ Given its superior performance, we primarily relied on the **XGB turnover model*
 
 - **number_project** was the strongest predictor of both turnover and satisfaction  
 - Other top predictors of turnover: **tenure**, **last_evaluation**, and **average_monthly_hours**
-- Employees with:
-  - 2 projects had a turnover rate of **65.6%**
-  - 6 projects: **55.8%**
-  - 7 projects: **100%**
+  
+  <img src="xgboost_left_feature_importance_barplot.png" alt="Projects vs Average Turnover" width="600">
+  
+- Two clear clusters with lower-than-average satisfaction stood out:
+  - Under-employed workers managing only 2 projects
+  - Overtime employees handling 6 or more projects
+  These groups may represent a mismatch between effort and recognition or workload and capacity, contributing to disengagement and turnover
+
+<img src="satisfaction_monthly_work_hours_by_number_project_scatterplot.png" alt="Projects vs Average Turnover" width="600">
+
 - Employees with 2 projects accounted for **43% of all turnover**, followed by those with 6 projects (18.6%)
-- **Under-employed workers** (125–165 hours/month) **with 2 projects had** an **82% turnover rate**  
+- **Under-employed workers** (125–165 hours/month) **with 2 projects had** had an **82% turnover rate**  
   - By contrast:
     - Full-time workers: **2.6%**
     - Overtime workers: **6.3%**
     - Part-time workers: **0%**
-- Under-employed workers with 3 projects had a turnover rate of **just 0.9%**, suggesting underutilization in the 2-project group
+- **Under-employed workers with 3 projects** had a turnover rate of **just 0.9%**, suggesting underutilization in the 2-project group
+- Overall, employees with:
+  - 2 projects had a turnover rate of **65.6%**
+  - 6 projects: **55.8%**
+  - 7 projects: **100%**
+    
+<img src="number_projects_vs_average_turnover_barplot.png" alt="Projects vs Average Turnover" width="600">  
+  
+- Uniform salary spread across average_monthly_hours and number_project suggests that overtime employees may not have compensation commensurate with their time
 - Turnover increases at the 4-year mark and spikes at year 5
   - At 4 years: leavers averaged ~6 projects vs. ~4 for those who stayed
   - At **5 years**: the project gap narrows (4.76 vs. 4.21), yet **turnover rises to 56.6%**, suggesting other causes such as lack of career progression
