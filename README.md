@@ -53,12 +53,15 @@ Given its superior performance, we primarily relied on the **XGB turnover model*
   - 6 projects: **55.8%**
   - 7 projects: **100%**
     
-<img src="number_projects_vs_average_turnover_barplot.png" alt="Projects vs Average Turnover" width="600">  
+<img src="projects_and_turnover_probability.png" alt="Projects vs Average Turnover" width="600">  
   
-- Uniform salary spread across average_monthly_hours and number_project suggests that overtime employees may not have compensation commensurate with their time
 - Turnover increases at the 4-year mark and spikes at year 5
   - At 4 years: leavers averaged ~6 projects vs. ~4 for those who stayed
   - At **5 years**: the project gap narrows (4.76 vs. 4.21), yet **turnover rises to 56.6%**, suggesting other causes such as lack of career progression
+- Salary distribution remained largely flat across average monthly hours, with a slight dip at the high end—suggesting overtime employees may not be fairly compensated for their extra time.
+
+<img src="salary_distribution_for_average_monthly_hours.png" alt="Projects vs Average Turnover" width="600">  
+  
 - **Evaluation scores rose with average monthly hours worked**
   - Overwork may be rewarded, encouraging burnout
   - Part-time workers may be undervalued, leading to increased turnover risk
